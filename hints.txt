@@ -1,2 +1,50 @@
 ng serve
 ng g component cars
+
+* означает, что используем синтаксис ангуляр
+
+цикл
+<li *ngFor="let opt of options; let i = index">{{ opt }} - {{ i }}</li>
+
+скрыть по условию
+<form *ngIf="isEdit">
+
+текст по условию
+<button>
+  {{ isShowCar ? "Скрыть авто" : "Показать авто" }}
+</button>
+
+слушатели
+<button (click)="carSelect('bmw')">BMW</button>
+
+формы
+<form (submit)="addOpt(option.value)">
+    <input
+      // идентификатор для ангуляра
+      #option
+    />
+    <button type="submit">Добавить</button>
+</form>
+addOpt(opt: string) {
+    this.options.unshift(opt);
+    // обязателен return
+    return false;
+  }
+
+
+forms model
+import { FormsModule } from '@angular/forms';
+<input [(ngModel)]="name" name="name" />
+<input [(ngModel)]="colors.car" name="car" />
+
+маршрутизатор
+import { RouterModule, Routes } from '@angular/router';
+const appRoutes: Routes = [
+  { path: '', component: CarComponent },
+  { path: 'about', component: ContactsComponent },
+];
+imports: [
+  RouterModule.forRoot(appRoutes), // forRoot
+],
+<router-outlet></router-outlet>
+<a routerLink="/">Cars</a>
