@@ -6,7 +6,7 @@
 </div>
 <div class="container" *ngIf="isShowCar">
   <h4>
-    <mark>Автомобиль </mark>{{ name }} <small>{{ model }}</small>
+    <mark>Автомобиль </mark>{{ name }} <small>{{ model | uppercase }}</small>
   </h4>
   <div class="alert alert-success">
     <p>Характеристики авто</p>

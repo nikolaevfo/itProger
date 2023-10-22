@@ -1,10 +1,17 @@
 ng serve
+ng new projectName
 ng g component cars
 
 * означает, что используем синтаксис ангуляр
 
+синтаксис
+{{}} - синтаксис интерполяции
+{{ title | uppercase}} - pipe
+
+
 цикл
 <li *ngFor="let opt of options; let i = index">{{ opt }} - {{ i }}</li>
+
 
 скрыть по условию
 <form *ngIf="isEdit">
